@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Done_BGScroller.cs" />
     <Compile Include="Assets\Scripts\Done_PlayerController.cs" />
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
+    <Compile Include="Assets\Scripts\ObstacleLeft.cs" />
     <Compile Include="Assets\Scripts\ObstacleRight.cs" />
     <Compile Include="Assets\Scripts\ObstacleScript.cs" />
     <Compile Include="Assets\Scripts\PeopleScript.cs" />
