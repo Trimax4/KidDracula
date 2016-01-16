@@ -12,16 +12,6 @@ public class HealthBarController : MonoBehaviour {
 	private float initY, maxX, minX;
 	private int currentHealth, bleedingSpeed;
 
-	// Use this for initialization
-	void Start () {
-		initY = healthBarTransform.position.y;
-		maxX = healthBarTransform.position.x + healthBarTransform.rect.width;
-		minX = healthBarTransform.position.x;
-
-		currentHealth = healthSpan;
-		bleedingSpeed = defaultBleedingSpeed;
-	}
-
 	public void SetBleedingSpeed (int bleedingSpeed)
 	{
 		this.bleedingSpeed = bleedingSpeed;
@@ -41,6 +31,16 @@ public class HealthBarController : MonoBehaviour {
 		} else if (currentHealth > healthSpan) {
 			currentHealth = healthSpan;
 		}
+	}
+
+	// Use this for initialization
+	void Start () {
+		initY = healthBarTransform.position.y;
+		maxX = healthBarTransform.position.x + healthBarTransform.rect.width;
+		minX = healthBarTransform.position.x;
+
+		currentHealth = healthSpan;
+		bleedingSpeed = defaultBleedingSpeed;
 	}
 
 	private void Bleed () {
