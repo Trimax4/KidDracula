@@ -5,7 +5,7 @@ using System.Collections;
 public class Spawner : MonoBehaviour
 {
     float buffer = 10.0f;
-    public GameObject gObject;
+    public GameObject gObject, gObject2, gObject3;
     [Range(0f, 3.0f)]
     public float SpawnTime;
 
@@ -16,10 +16,20 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        float rand = Random.Range(0, 3);
-        string spawnerSelected = "Spawner (" + rand + ")";
-        Debug.Log(spawnerSelected);
+        int pickSpawner = Random.Range(0,3);
+        string spawnerSelected = "Spawner (" + pickSpawner + ")";
 
-        Instantiate(gObject, GameObject.Find(spawnerSelected).transform.position, Quaternion.identity);
+        int rand = Random.Range(0,2);
+
+        if (rand == 0)
+        {
+            Instantiate(gObject, GameObject.Find(spawnerSelected).transform.position, Quaternion.identity);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(gObject2, GameObject.Find(spawnerSelected).transform.position, Quaternion.identity);
+        }
+
+        
     }
 }

@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 237918452}
+  - 114: {fileID: 237918453}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
@@ -115,6 +116,21 @@ Transform:
   - {fileID: 745515352}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &237918453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237918451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d15cde439b7e4d4eb13e347001ccf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gObject: {fileID: 137110, guid: 58aebcc9c49df274d89edd95620357d0, type: 2}
+  gObject2: {fileID: 154008, guid: 712d0517779895848b3d9af2bd593263, type: 2}
+  gObject3: {fileID: 0}
+  SpawnTime: 1.02600002
 --- !u!1 &461306909
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +226,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 745515352}
   - 212: {fileID: 745515351}
-  - 114: {fileID: 745515353}
   m_Layer: 0
   m_Name: Spawner (1)
   m_TagString: Untagged
@@ -258,19 +273,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 237918452}
   m_RootOrder: 2
---- !u!114 &745515353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 745515350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d15cde439b7e4d4eb13e347001ccf01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gObject: {fileID: 154008, guid: 712d0517779895848b3d9af2bd593263, type: 2}
-  SpawnTime: 1.07000005
 --- !u!1 &1114840133
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +491,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2059063006}
   - 212: {fileID: 2059063008}
-  - 114: {fileID: 2059063007}
   m_Layer: 0
   m_Name: Spawner (2)
   m_TagString: Untagged
@@ -509,19 +510,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 237918452}
   m_RootOrder: 1
---- !u!114 &2059063007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2059063005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d15cde439b7e4d4eb13e347001ccf01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gObject: {fileID: 154008, guid: 712d0517779895848b3d9af2bd593263, type: 2}
-  SpawnTime: 1.07000005
 --- !u!212 &2059063008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -559,7 +547,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2074116461}
   - 212: {fileID: 2074116463}
-  - 114: {fileID: 2074116462}
   m_Layer: 0
   m_Name: Spawner (0)
   m_TagString: Untagged
@@ -579,19 +566,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 237918452}
   m_RootOrder: 0
---- !u!114 &2074116462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2074116460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d15cde439b7e4d4eb13e347001ccf01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gObject: {fileID: 154008, guid: 712d0517779895848b3d9af2bd593263, type: 2}
-  SpawnTime: 1.07000005
 --- !u!212 &2074116463
 SpriteRenderer:
   m_ObjectHideFlags: 0
