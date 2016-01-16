@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 // contorller for the health, from [0, healthSpan] of unit
@@ -8,8 +9,10 @@ public class HealthBarController : MonoBehaviour {
 	const int defaultBleedingSpeed = 10; // unit per frame
 	const int healthSpan = 1000; // in unit
 
+	[SerializeField]
+	public Text healthSubtext, healthMultipler;
 	public RectTransform healthBarTransform;
-	private float initY, maxX, minX;
+	private float initY, maxX, minX, multipler;
 	private int currentHealth, bleedingSpeed;
 
 	/*  public */
@@ -61,6 +64,18 @@ public class HealthBarController : MonoBehaviour {
 	private void VisualizeHealth () {
 		float currentX = minX + (maxX - minX) * (healthSpan - currentHealth) / healthSpan;
 		healthBarTransform.position = new Vector3 (currentX, initY);
+
+		if (currentHealth < healthSpan / 3) {
+			healthSubtext.text = "You suck!";
+			multipler = 0.5f;
+		} else if (currentHealth > healthSpan / 3 * 2) {
+			healthSubtext.text = "Bloody Kid :)";
+			multipler = 2f;
+		} else {
+			healthSubtext.text = "Not bad...";
+			multipler = 1f;
+		}
+		healthMultipler.text = multipler.ToString ("0.0") + "x";
 	}
 	
 	// Update is called once per frame
