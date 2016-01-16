@@ -1,0 +1,2 @@
+- Go to Edit->ProjectSettings->Editor and set 'Version Control' to 'Visible Meta Files'
+- In the same window set 'Asset Serialization' to 'Force Text'
