@@ -5,12 +5,14 @@ using System.Collections;
 
 public class HealthBarController : MonoBehaviour {
 
-	const int defaultBleedingSpeed = 1; // unit per frame
+	const int defaultBleedingSpeed = 10; // unit per frame
 	const int healthSpan = 1000; // in unit
 
 	public RectTransform healthBarTransform;
 	private float initY, maxX, minX;
 	private int currentHealth, bleedingSpeed;
+
+	/*  public */
 
 	public void SetBleedingSpeed (int bleedingSpeed)
 	{
@@ -22,16 +24,25 @@ public class HealthBarController : MonoBehaviour {
 		return currentHealth;
 	}
 
+	public void GainBloodBy (float percentage)
+	{
+		currentHealth = (int) ((float) currentHealth + healthSpan * percentage);
+
+		if (currentHealth > healthSpan) {
+			currentHealth = healthSpan;
+		}
+	}
+
 	public void BleedBy (float percentage)
 	{
 		currentHealth = (int) ((float) currentHealth - healthSpan * percentage);
 
 		if (currentHealth < 0) {
 			currentHealth = 0;
-		} else if (currentHealth > healthSpan) {
-			currentHealth = healthSpan;
 		}
 	}
+
+	/*  private and pre-defined */
 
 	// Use this for initialization
 	void Start () {
