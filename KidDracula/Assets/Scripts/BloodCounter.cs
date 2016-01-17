@@ -39,6 +39,10 @@ public class BloodCounter : MonoBehaviour {
 		sharedDataObjectScript.bloodConsumed = bloodConsumed;
 	}
 
+	public void resetBloodCounter () {
+		sharedDataObjectScript.bloodConsumed = 0;	
+	}
+
 	// Use this for initialization
 	void Start () {
 		scoreText.text = "0";
