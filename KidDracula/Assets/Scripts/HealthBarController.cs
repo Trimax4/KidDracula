@@ -12,7 +12,7 @@ public class HealthBarController : MonoBehaviour {
 	[SerializeField]
 	public Text healthSubtext, healthMultipler;
 	public RectTransform healthBarTransform;
-	private float initY, maxX, minX;
+	public float initY, maxX, minX, currentX;
 	public int currentHealth, bleedingSpeed;
 	private BloodCounter scoreText;
 
@@ -50,9 +50,10 @@ public class HealthBarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		initY = healthBarTransform.position.y;
-		maxX = healthBarTransform.position.x + healthBarTransform.rect.width;
-		minX = healthBarTransform.position.x;
+		initY = healthBarTransform.localPosition.y;
+		maxX = healthBarTransform.localPosition.x + healthBarTransform.rect.width;
+		minX = healthBarTransform.localPosition.x;
+		Debug.Log (minX.ToString ());
 
 		currentHealth = healthSpan;
 		bleedingSpeed = defaultBleedingSpeed;
@@ -64,8 +65,8 @@ public class HealthBarController : MonoBehaviour {
 	}
 
 	private void VisualizeHealth () {
-		float currentX = minX + (maxX - minX) * (healthSpan - currentHealth) / healthSpan;
-		healthBarTransform.position = new Vector3 (currentX, initY);
+		currentX = minX + (maxX - minX) * (healthSpan - currentHealth) / healthSpan;
+		healthBarTransform.localPosition = new Vector3 (currentX, initY);
 
 		if (currentHealth < healthSpan / 3) {
 			healthSubtext.text = "You suck!";
