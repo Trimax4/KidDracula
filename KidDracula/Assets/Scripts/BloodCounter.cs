@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BloodCounter : MonoBehaviour {
 
+	[SerializeField]
+	public Text scoreText;
 	public enum People {Man, Woman, Child};
 	private static System.Collections.Generic.Dictionary<People, float> peopleToBlood
 		= new System.Collections.Generic.Dictionary<People, float> ()
@@ -41,6 +44,7 @@ public class BloodCounter : MonoBehaviour {
 		float bloodFromType = peopleToBlood [type];
 		bloodAmount += bloodFromType;
 		score += bloodFromType * multipler;
+		scoreText.text = this.GetScore ().ToString ();
 	}
 
 	// Use this for initialization

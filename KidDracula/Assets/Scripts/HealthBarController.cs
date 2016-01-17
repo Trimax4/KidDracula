@@ -12,8 +12,9 @@ public class HealthBarController : MonoBehaviour {
 	[SerializeField]
 	public Text healthSubtext, healthMultipler;
 	public RectTransform healthBarTransform;
-	private float initY, maxX, minX, multipler;
+	private float initY, maxX, minX;
 	private int currentHealth, bleedingSpeed;
+	private BloodCounter scoreText;
 
 	/*  public */
 
@@ -55,6 +56,7 @@ public class HealthBarController : MonoBehaviour {
 
 		currentHealth = healthSpan;
 		bleedingSpeed = defaultBleedingSpeed;
+		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<BloodCounter> ();
 	}
 
 	private void Bleed () {
@@ -67,15 +69,21 @@ public class HealthBarController : MonoBehaviour {
 
 		if (currentHealth < healthSpan / 3) {
 			healthSubtext.text = "You suck!";
-			multipler = 0.5f;
+			UpdateMultipler (0.5f);
 		} else if (currentHealth > healthSpan / 3 * 2) {
 			healthSubtext.text = "Bloody Kid :)";
-			multipler = 2f;
+			UpdateMultipler (2f);
 		} else {
 			healthSubtext.text = "Not bad...";
-			multipler = 1f;
+			UpdateMultipler (1f);
 		}
-		healthMultipler.text = multipler.ToString ("0.0") + "x";
+
+	}
+
+	private void UpdateMultipler (float multipler)
+	{
+		scoreText.SetBloodMultipler (multipler);
+		healthMultipler.text = multipler.ToString ("0.0") + "x";	
 	}
 	
 	// Update is called once per frame
