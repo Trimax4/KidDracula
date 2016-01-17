@@ -17,7 +17,7 @@ public class PeopleScript : MonoBehaviour
         dataObject = GameObject.Find("VisualizedHealthBar");
         localData = dataObject.GetComponent<HealthBarController>();
 
-        dataObject = GameObject.Find("BloodCounter");
+		dataObject = GameObject.FindGameObjectWithTag ("ScoreText");
 		score = dataObject.GetComponent<BloodCounter> ();
     }
 
