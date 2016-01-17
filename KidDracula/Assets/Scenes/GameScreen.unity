@@ -140,7 +140,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80888290}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
@@ -171,8 +171,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80888290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.27, z: 0}
-  m_LocalScale: {x: 65.9866, y: 3.1448364, z: 1}
+  m_LocalPosition: {x: 0.1, y: -6.66, z: 0}
+  m_LocalScale: {x: 65.9866, y: -2.4229138, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -185,7 +185,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 100385592}
   - 212: {fileID: 100385591}
-  - 50: {fileID: 100385590}
   - 61: {fileID: 100385593}
   m_Layer: 0
   m_Name: Left_boundary
@@ -194,30 +193,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &100385590
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 100385589}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &100385591
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 100385589}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
@@ -248,8 +230,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 100385589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.73, y: 0.06, z: 0}
-  m_LocalScale: {x: 3.6865022, y: 74.862854, z: 1}
+  m_LocalPosition: {x: -4.73, y: -4.19, z: 0}
+  m_LocalScale: {x: 3.6865022, y: 9.359896, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -655,9 +637,9 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763949111}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20000
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -670,7 +652,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763949111}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
@@ -701,8 +683,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763949111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82, y: 0.11, z: 0}
-  m_LocalScale: {x: 3.6865022, y: 74.862854, z: 1}
+  m_LocalPosition: {x: 4.87, y: -4.13, z: 0}
+  m_LocalScale: {x: 3.6865022, y: 10.014925, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
