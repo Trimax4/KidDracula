@@ -18,8 +18,7 @@ public class PeopleScript : MonoBehaviour
         localData = dataObject.GetComponent<HealthBarController>();
 
         dataObject = GameObject.Find("BloodCounter");
-        score = 
-
+		score = dataObject.GetComponent<BloodCounter> ();
     }
 
     void Awake()
