@@ -308,7 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gObject: {fileID: 137110, guid: 58aebcc9c49df274d89edd95620357d0, type: 2}
   gObject2: {fileID: 154008, guid: 712d0517779895848b3d9af2bd593263, type: 2}
-  gObject3: {fileID: 0}
+  gObject3: {fileID: 154008, guid: 7de2533208a7b450fbce5c9dde92d244, type: 2}
+  gObject4: {fileID: 154008, guid: e0e2369cc5c39430c958ab83bb5d30e5, type: 2}
   SpawnTime: 1.026
 --- !u!114 &237918454
 MonoBehaviour:
@@ -1156,6 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1265813003}
+  bloodConsumed: 0
   score: 0
   multipler: 1
 --- !u!114 &1265813003

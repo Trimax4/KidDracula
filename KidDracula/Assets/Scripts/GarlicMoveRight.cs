@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -45,6 +46,7 @@ public class GarlicMoveRight : MonoBehaviour
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
+			SceneManager.LoadScene ("GameOverScreen");
         }
     }
 }

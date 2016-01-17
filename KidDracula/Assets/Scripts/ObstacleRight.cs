@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -29,6 +30,7 @@ public class ObstacleRight : MonoBehaviour
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
+			SceneManager.LoadScene ("GameOverScreen");
         }
     }
 

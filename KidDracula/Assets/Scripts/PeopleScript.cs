@@ -37,6 +37,7 @@ public class PeopleScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player1")
         {
+			Debug.Log (gameObject.tag + " eaten");
 			float bloodWorth = peopleToBlood [gameObject.tag] * 10;
 			localData.GainBloodBy(bloodWorth);
 			score.AddBlood (bloodWorth);
