@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Player_movement : MonoBehaviour {
 
-    float speed = 4f;
-   
+    public float resetSpeed = 4f;
+    private float speed;
+           
 	// Use this for initialization
 	void Start () {
-	
+        speed = resetSpeed;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class Player_movement : MonoBehaviour {
         {
             speed=0f;
         }
-        speed=4f;
+        speed=resetSpeed;
         if (Input.GetKey(KeyCode.RightArrow)&& (GameObject.Find("Player").transform.position.x < GameObject.Find("Right_boundary").transform.position.x))
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
@@ -30,7 +31,7 @@ public class Player_movement : MonoBehaviour {
         {
             speed=0f;
         }
-        speed=4f;
+        speed=resetSpeed;
     }
   
 }

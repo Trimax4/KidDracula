@@ -6,14 +6,14 @@ using System.Collections;
 
 public class HealthBarController : MonoBehaviour {
 
-	const int defaultBleedingSpeed = 10; // unit per frame
+	const int defaultBleedingSpeed = 2; // unit per frame
 	const int healthSpan = 1000; // in unit
 
 	[SerializeField]
 	public Text healthSubtext, healthMultipler;
 	public RectTransform healthBarTransform;
 	private float initY, maxX, minX;
-	private int currentHealth, bleedingSpeed;
+	public int currentHealth, bleedingSpeed;
 	private BloodCounter scoreText;
 
 	/*  public */

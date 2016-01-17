@@ -41,7 +41,7 @@ public class GarlicMoveRight : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player1")
         {
             Destroy(col.gameObject);
             Destroy(gameObject);

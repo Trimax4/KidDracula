@@ -10,7 +10,6 @@ public class ObstacleRight : MonoBehaviour
     public float randNum = 0;
     public float lifeTime = 4;
     public int intervalInUnits = 100;
-    public GameObject gObject;
     private float startingPosition;
 
     void Start()
@@ -26,7 +25,7 @@ public class ObstacleRight : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player1")
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
