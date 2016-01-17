@@ -70,11 +70,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Done_BGScroller.cs" />
     <Compile Include="Assets\Scripts\Done_PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GarlicMoveLeft.cs" />
+    <Compile Include="Assets\Scripts\GarlicMoveRight.cs" />
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
     <Compile Include="Assets\Scripts\ObstacleLeft.cs" />
     <Compile Include="Assets\Scripts\ObstacleRight.cs" />
     <Compile Include="Assets\Scripts\ObstacleScript.cs" />
     <Compile Include="Assets\Scripts\PeopleScript.cs" />
+    <Compile Include="Assets\Scripts\Player_movement.cs" />
     <Compile Include="Assets\Scripts\SideSpawner.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
   </ItemGroup>

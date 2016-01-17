@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SideSpawner : MonoBehaviour
 {
-    public GameObject gObject, gObject2;
+    public GameObject gObject, gObject2, gObject3, gObject4;
     [Range(0f, 3.0f)]
     public float SpawnTime;
 
@@ -15,7 +15,7 @@ public class SideSpawner : MonoBehaviour
 
     void Spawn()
     {
-        int rand = Random.Range(0,2);
+        int rand = Random.Range(0, 4);
 
         if (rand == 0)
         {
@@ -25,7 +25,16 @@ public class SideSpawner : MonoBehaviour
         {
             Instantiate(gObject2, GameObject.Find("RightSpawner").transform.position, Quaternion.identity);
         }
+        else if (rand == 2)
+        {
+            Instantiate(gObject3, GameObject.Find("RightSpawner").transform.position, Quaternion.identity);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(gObject4, GameObject.Find("LeftSpawner").transform.position, Quaternion.identity);
+        }
 
-        
+
+
     }
 }

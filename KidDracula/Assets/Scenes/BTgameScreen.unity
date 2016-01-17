@@ -147,6 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gObject: {fileID: 138410, guid: ee2a3b8e177c772429ff46c09e0ee715, type: 2}
   gObject2: {fileID: 162252, guid: 86352c5af817ce54d85daf5f1360789a, type: 2}
+  gObject3: {fileID: 176796, guid: 4bcbba36393613a4fae6577a907f4629, type: 2}
+  gObject4: {fileID: 105206, guid: 1a6d32580dbc0864fb30228470333dc7, type: 2}
   SpawnTime: 1.02999997
 --- !u!1 &421149055
 GameObject:
@@ -707,7 +709,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343907063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36999989, y: -5.86999989, z: -10}
+  m_LocalPosition: {x: -4.36999989, y: -4.53000021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 237918452}
@@ -867,7 +869,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919255570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.61999989, y: -5.86999989, z: -10}
+  m_LocalPosition: {x: 4.61999989, y: -4.53000021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 237918452}
