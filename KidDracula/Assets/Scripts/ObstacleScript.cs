@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ObstacleScript : MonoBehaviour
@@ -24,6 +25,7 @@ public class ObstacleScript : MonoBehaviour
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
+			SceneManager.LoadScene ("GameOverScreen");
         }
     }
 

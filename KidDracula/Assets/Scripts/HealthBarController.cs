@@ -30,7 +30,7 @@ public class HealthBarController : MonoBehaviour {
 
 	public void GainBloodBy (float percentage)
 	{
-		currentHealth = (int) ((float) currentHealth + healthSpan * percentage);
+		currentHealth = (int) ((float) currentHealth + healthSpan * percentage / 100);
 
 		if (currentHealth > healthSpan) {
 			currentHealth = healthSpan;
@@ -39,7 +39,7 @@ public class HealthBarController : MonoBehaviour {
 
 	public void BleedBy (float percentage)
 	{
-		currentHealth = (int) ((float) currentHealth - healthSpan * percentage);
+		currentHealth = (int) ((float) currentHealth - healthSpan * percentage / 100);
 
 		if (currentHealth < 0) {
 			currentHealth = 0;
@@ -53,7 +53,6 @@ public class HealthBarController : MonoBehaviour {
 		initY = healthBarTransform.localPosition.y;
 		maxX = healthBarTransform.localPosition.x + healthBarTransform.rect.width;
 		minX = healthBarTransform.localPosition.x;
-		Debug.Log (minX.ToString ());
 
 		currentHealth = healthSpan;
 		bleedingSpeed = defaultBleedingSpeed;
@@ -61,7 +60,7 @@ public class HealthBarController : MonoBehaviour {
 	}
 
 	private void Bleed () {
-		BleedBy ((float) bleedingSpeed / healthSpan);
+		BleedBy ((float) bleedingSpeed / healthSpan * 100);
 	}
 
 	private void VisualizeHealth () {

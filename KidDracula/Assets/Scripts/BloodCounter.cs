@@ -6,22 +6,15 @@ public class BloodCounter : MonoBehaviour {
 
 	[SerializeField]
 	public Text scoreText;
-	public enum People {Man, Woman, Child};
-	private static System.Collections.Generic.Dictionary<People, float> peopleToBlood
-		= new System.Collections.Generic.Dictionary<People, float> ()
-	{
-		{People.Man, 5.5f},
-		{People.Woman, 4.9f},
-		{People.Child, 2.5f}
-	};
 
-	private float bloodAmount, score, multipler;
+	public float bloodConsumed, score, multipler;
+	private ShareDataScript sharedDataObjectScript;
 
 	public BloodCounter ()	
 	{
-		bloodAmount = 0;
 		score = 0;
 		multipler = 1;
+		bloodConsumed = 0;
 	}
 
 	public int GetScore ()
@@ -31,7 +24,7 @@ public class BloodCounter : MonoBehaviour {
 
 	public float GetBloodAmount ()
 	{
-		return bloodAmount;
+		return bloodConsumed;
 	}
 
 	public void SetBloodMultipler (float multipler)
@@ -39,21 +32,21 @@ public class BloodCounter : MonoBehaviour {
 		this.multipler = multipler;
 	}
 
-	public void AddBlood (People type)
+	public void AddBlood (float bloodAmount)
 	{
-		float bloodFromType = peopleToBlood [type];
-		bloodAmount += bloodFromType;
-		score += bloodFromType * multipler;
-		scoreText.text = this.GetScore ().ToString ();
+		bloodConsumed += bloodAmount;
+		score += bloodAmount * multipler;
+		sharedDataObjectScript.bloodConsumed = bloodConsumed;
 	}
 
 	// Use this for initialization
 	void Start () {
-	
+		scoreText.text = "0";
+		sharedDataObjectScript = GameObject.FindGameObjectWithTag ("shared_data_object").GetComponent<ShareDataScript> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		scoreText.text = sharedDataObjectScript.bloodConsumed.ToString ();
 	}
 }

@@ -6,10 +6,17 @@ public class PeopleScript : MonoBehaviour
     private GameObject dataObject;
     private HealthBarController localData;
     private BloodCounter score;
+
+	private static System.Collections.Generic.Dictionary<string, float> peopleToBlood
+	= new System.Collections.Generic.Dictionary<string, float> ()
+	{
+		{"man", 5.5f},
+		{"woman", 4.9f},
+		{"child", 2.5f}
+	};
         
     public float fallSpeed = 3;
     public float lifeTime = 0;
-    public float bloodWorth = 5f;
 
     void Start()
     {
@@ -30,7 +37,9 @@ public class PeopleScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player1")
         {
-            localData.GainBloodBy(bloodWorth);
+			float bloodWorth = peopleToBlood [gameObject.tag] * 10;
+			localData.GainBloodBy(bloodWorth);
+			score.AddBlood (bloodWorth);
             Destroy(gameObject);
         }
     }

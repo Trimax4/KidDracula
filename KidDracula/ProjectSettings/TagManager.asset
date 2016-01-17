@@ -6,7 +6,10 @@ TagManager:
   tags:
   - ScoreText
   - Player1
-  - New Tag
+  - man
+  - woman
+  - child
+  - shared_data_object
   layers:
   - Default
   - TransparentFX
