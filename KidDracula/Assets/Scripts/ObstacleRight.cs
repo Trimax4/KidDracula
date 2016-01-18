@@ -19,6 +19,13 @@ public class ObstacleRight : MonoBehaviour
         startingPosition = gameObject.transform.position.x;
     }
 
+    void Update()
+    {
+        Vector3 rotation = transform.rotation.eulerAngles;
+        rotation.z += 20;
+        transform.rotation = Quaternion.Euler(rotation);
+    }
+
     void Awake()
     {
         Destroy(gameObject, lifeTime);

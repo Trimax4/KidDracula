@@ -28,6 +28,9 @@ public class GarlicMoveRight : MonoBehaviour
 
     void Update()
     {
+        Vector3 rotation = transform.rotation.eulerAngles;
+        rotation.z += 20;
+        transform.rotation = Quaternion.Euler(rotation);
         if (startingPosition + intervalInUnits < gameObject.transform.position.x)
         {
             //Vector3 spawnPosition = new Vector3();
