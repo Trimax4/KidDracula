@@ -5,17 +5,24 @@ using System.Collections;
 public class SideSpawner : MonoBehaviour
 {
     public GameObject gObject, gObject2, gObject3, gObject4;
-    [Range(0f, 3.0f)]
     public float SpawnTime;
-
+    private GameObject dataObject;
+    private Timer localData;
     void Start()
     {
-        InvokeRepeating("Spawn", 0.5f, SpawnTime);
+        dataObject = GameObject.Find("Timer");
+        localData = dataObject.GetComponent<Timer>();
+        InvokeRepeating("Spawn", 0.1f, SpawnTime);
     }
 
     void Spawn()
     {
         int rand = Random.Range(0, 4);
+
+        if(localData.checkPoint() == true)
+        {
+            SpawnTime -= .05f;
+        }
 
         if (rand == 0)
         {

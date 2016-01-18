@@ -12,9 +12,13 @@ public class ObstacleRight : MonoBehaviour
     public float lifeTime = 4;
     public int intervalInUnits = 100;
     private float startingPosition;
+    public GameObject dataObject;
+    public Timer localData;
 
     void Start()
     {
+        dataObject = GameObject.Find("Timer");
+        localData = dataObject.GetComponent<Timer>();
         GetComponent<Rigidbody2D>().velocity = Vector2.left * leftSpeed;
         startingPosition = gameObject.transform.position.x;
     }
@@ -24,6 +28,11 @@ public class ObstacleRight : MonoBehaviour
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation.z += 20;
         transform.rotation = Quaternion.Euler(rotation);
+        if (localData.checkPoint() == true)
+        {
+            //GetComponent<Rigidbody2D>().gravityScale += .2f;
+            leftSpeed += 10f;
+        }
     }
 
     void Awake()

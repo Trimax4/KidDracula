@@ -4,20 +4,28 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    float buffer = 10.0f;
+
     public GameObject gObject, gObject2, gObject3, gObject4;
-    [Range(0f, 3.0f)]
     public float SpawnTime;
+    private GameObject dataObject;
+    private Timer localData;
 
     void Start()
     {
-        InvokeRepeating("Spawn", 0.5f, SpawnTime);
+        dataObject = GameObject.Find("Timer");
+        localData = dataObject.GetComponent<Timer>();
+        InvokeRepeating("Spawn", 0.1f, SpawnTime);
     }
 
     void Spawn()
     {
         int pickSpawner = Random.Range(0, 3);
         string spawnerSelected = "Spawner (" + pickSpawner + ")";
+
+        if (localData.checkPoint() == true)
+        {
+            SpawnTime -= .05f;
+        }
 
         int rand = Random.Range(0, 4);
 //		Debug.Log (rand.ToString ());
@@ -29,8 +37,6 @@ public class Spawner : MonoBehaviour
 			Instantiate (gObject3, GameObject.Find (spawnerSelected).transform.position, Quaternion.identity);
 		} else if (rand == 3){
 			Instantiate (gObject4, GameObject.Find (spawnerSelected).transform.position, Quaternion.identity);
-		}
-
-        
+		}      
     }
 }
