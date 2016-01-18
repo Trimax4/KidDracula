@@ -91,9 +91,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a5db63dc041404a8ff827f80458054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 4
+  fallSpeed: 5
   randNum: 0
   lifeTime: 4
+  dataObject: {fileID: 0}
+  localData: {fileID: 0}
 --- !u!212 &21275044
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,7 +139,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fallSpeed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder

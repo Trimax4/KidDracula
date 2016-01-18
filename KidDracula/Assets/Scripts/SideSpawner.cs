@@ -19,10 +19,7 @@ public class SideSpawner : MonoBehaviour
     {
         int rand = Random.Range(0, 4);
 
-        if(localData.checkPoint() == true)
-        {
-            SpawnTime -= .05f;
-        }
+        SpawnTime -= .05f;
 
         if (rand == 0)
         {
