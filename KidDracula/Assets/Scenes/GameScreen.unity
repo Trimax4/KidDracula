@@ -1268,21 +1268,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1114840134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114840133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e356d09f35d294ea4f8a0dec92bd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 5
-  tileSizeZ: 30
-  repeatTile1: {fileID: 0}
-  repeatTile2: {fileID: 0}
 --- !u!23 &1114840135
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ public class Player_movement : MonoBehaviour {
 	public void Die () {
         GameObject.Find("Main Camera").GetComponent<SoundManager>().PlaySound(3);
         animator.SetTrigger ("PlayerHurt");
-		Invoke ("LoseGame", 0.5f);
+		Invoke ("LoseGame", 0.05f);
 	}
 
 	private void LoseGame () {

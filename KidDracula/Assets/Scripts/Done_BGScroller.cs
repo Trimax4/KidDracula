@@ -16,7 +16,6 @@ public class Done_BGScroller : MonoBehaviour
 	{
 		transform.position += new Vector3(0, scrollSpeed * -1, 0);
 		tileIndex = (int) Mathf.Abs((transform.position.y) / transform.localScale.y);
-		Debug.Log (tileIndex);
 		repeatTile1.transform.localPosition = new Vector3 (
 			0,
 			0 + tileIndex,
