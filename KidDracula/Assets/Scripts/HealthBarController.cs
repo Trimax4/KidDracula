@@ -12,9 +12,12 @@ public class HealthBarController : MonoBehaviour {
 	[SerializeField]
 	public Text healthSubtext, healthMultipler;
 	public RectTransform healthBarTransform;
-	public float initY, maxX, minX, currentX;
+	public float dieThreshold = 5; // in percentage
 	public int currentHealth, bleedingSpeed;
+	private float initY, maxX, minX, currentX;
 	private BloodCounter scoreText;
+	private Player_movement playerScript;
+	private bool isBelowThreshold = false;
 
 	/*  public */
 
@@ -57,6 +60,8 @@ public class HealthBarController : MonoBehaviour {
 		currentHealth = healthSpan;
 		bleedingSpeed = defaultBleedingSpeed;
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<BloodCounter> ();
+
+		playerScript = GameObject.FindGameObjectWithTag ("Player1").GetComponent<Player_movement> ();
 	}
 
 	private void Bleed () {
@@ -78,6 +83,21 @@ public class HealthBarController : MonoBehaviour {
 			UpdateMultipler (1f);
 		}
 
+		if (currentHealth < 1) {
+			playerScript.Die ();
+		}
+
+		if (100f * currentHealth / healthSpan < dieThreshold) {
+			if (!isBelowThreshold) {
+				playerScript.BarelyDie ();
+				isBelowThreshold = true;
+			}
+		} else {
+			if (isBelowThreshold) {
+				isBelowThreshold = false;
+				playerScript.Revive ();
+			}
+		}
 	}
 
 	private void UpdateMultipler (float multipler)

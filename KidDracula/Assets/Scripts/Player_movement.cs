@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Player_movement : MonoBehaviour {
@@ -8,6 +9,9 @@ public class Player_movement : MonoBehaviour {
     private GameObject dataObject;
     private float speed;
     private SoundManager sound;
+	public GameObject bloodObject;
+	public RectTransform rectTransform;
+	public Renderer rend;
            
 	// Use this for initialization
 	void Start () {
@@ -15,7 +19,8 @@ public class Player_movement : MonoBehaviour {
 
         dataObject = GameObject.Find("Main Camera");
         sound = dataObject.GetComponent<SoundManager>();
-    }
+		rend = GetComponent<Renderer>();
+	}
 	
 	// Update is called once per frame
     void FixedUpdate()
@@ -60,4 +65,35 @@ public class Player_movement : MonoBehaviour {
         }
     }
 
+	public void Bite (string direction) {
+		animator.SetTrigger ("PlayerBite" + direction);
+		Vector3 offset = new Vector3 (0, 0.8f, 0);
+		Vector3 rotation = new Vector3 (0, 0, 0);
+		if (direction == "Left") {
+			offset.x = -0.4f;	
+		} else {
+			offset.x = 0.3f;
+			rotation.z = -45;
+		}
+		Instantiate (bloodObject, transform.position + offset, Quaternion.Euler (rotation));
+	}
+
+	public void BarelyDie () {
+		rend.material.color = new Color (0.6f, 0.3f, 0.3f, 1);
+		animator.SetTrigger ("PlayerHurt");
+	}
+
+	public void Revive () {
+		rend.material.color = new Color (1, 1, 1, 1);
+		animator.SetTrigger ("PlayerRevive");
+	}
+
+	public void Die () {
+		animator.SetTrigger ("PlayerHurt");
+		Invoke ("LoseGame", 0.5f);
+	}
+
+	private void LoseGame () {
+		SceneManager.LoadScene ("GameOverScreen");
+	}
 }
