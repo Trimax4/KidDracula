@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Player_movement : MonoBehaviour {
@@ -8,10 +9,12 @@ public class Player_movement : MonoBehaviour {
 	public GameObject bloodObject;
 	public RectTransform rectTransform;
     private float speed;
+	public Renderer rend;
            
 	// Use this for initialization
 	void Start () {
         speed = resetSpeed;
+		rend = GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
@@ -49,5 +52,23 @@ public class Player_movement : MonoBehaviour {
 		}
 		Instantiate (bloodObject, transform.position + offset, Quaternion.Euler (rotation));
 	}
-  
+
+	public void BarelyDie () {
+		rend.material.color = new Color (0.6f, 0.3f, 0.3f, 1);
+		animator.SetTrigger ("PlayerHurt");
+	}
+
+	public void Revive () {
+		rend.material.color = new Color (1, 1, 1, 1);
+		animator.SetTrigger ("PlayerRevive");
+	}
+
+	public void Die () {
+		animator.SetTrigger ("PlayerHurt");
+		Invoke ("LoseGame", 0.5f);
+	}
+
+	private void LoseGame () {
+		SceneManager.LoadScene ("GameOverScreen");
+	}
 }
