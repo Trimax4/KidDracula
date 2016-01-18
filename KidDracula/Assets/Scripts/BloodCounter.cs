@@ -9,12 +9,14 @@ public class BloodCounter : MonoBehaviour {
 
 	public float bloodConsumed, score, multipler;
 	private ShareDataScript sharedDataObjectScript;
+	private bool isUpdating;
 
 	public BloodCounter ()	
 	{
 		score = 0;
 		multipler = 1;
 		bloodConsumed = 0;
+		isUpdating = true;
 	}
 
 	public int GetScore ()
@@ -40,6 +42,7 @@ public class BloodCounter : MonoBehaviour {
 	}
 
 	public void resetBloodCounter () {
+		isUpdating = false;
 		sharedDataObjectScript.bloodConsumed = 0;	
 	}
 
@@ -51,6 +54,8 @@ public class BloodCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		scoreText.text = sharedDataObjectScript.bloodConsumed.ToString ();
+		if (isUpdating) {
+			scoreText.text = sharedDataObjectScript.bloodConsumed.ToString ();
+		}
 	}
 }
