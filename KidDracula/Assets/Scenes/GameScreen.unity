@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e356d09f35d294ea4f8a0dec92bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 5
+  scrollSpeed: 0.15
   tileSizeZ: 30
   repeatTile1: {fileID: 1114840133}
   repeatTile2: {fileID: 570232789}
