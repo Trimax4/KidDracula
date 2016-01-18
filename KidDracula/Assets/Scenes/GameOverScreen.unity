@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875cd2ee3fa5042dc9b04bd1e3bb19ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tex: {fileID: 2800000, guid: 408fde744ba8519489a9ce3ce2addd37, type: 3}
   step: 0.02
   isFading: 0
 --- !u!1 &940233448
@@ -405,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a811f6d8ce3c4abba016926564b5ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayStart: 1.7
+  delayStart: 1.3
 --- !u!224 &954349166
 RectTransform:
   m_ObjectHideFlags: 0
