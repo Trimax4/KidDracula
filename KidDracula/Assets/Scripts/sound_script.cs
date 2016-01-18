@@ -14,7 +14,7 @@ public class sound_script : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision col)
     {
-        if((col.gameObject.name=="Male")||(col.gameObject.name=="Female")||(col.gameObject.name=="Child"))
+        if((col.gameObject.name=="Male"))
         {
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
