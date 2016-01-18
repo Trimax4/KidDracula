@@ -229,6 +229,7 @@ GameObject:
   - 92: {fileID: 753464501}
   - 124: {fileID: 753464500}
   - 81: {fileID: 753464499}
+  - 114: {fileID: 753464504}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,6 +304,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &753464504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 753464498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875cd2ee3fa5042dc9b04bd1e3bb19ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 0.15
+  isFading: 0
 --- !u!1 &940233448
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +717,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 954349165}
         m_MethodName: restartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 753464504}
+        m_MethodName: StartFade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

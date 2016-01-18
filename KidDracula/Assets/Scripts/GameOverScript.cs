@@ -4,8 +4,14 @@ using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
 
-	public void restartGame () {
+	public float delayStart;
+
+	public void RestartGame () {
 		SceneManager.LoadScene ("GameScreen");
+	}
+
+	public void InvokeToRestartGame () {
+		Invoke ("RestartGame", delayStart);
 	}
 
 	// Use this for initialization

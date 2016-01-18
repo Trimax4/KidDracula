@@ -7,9 +7,14 @@ public class WelcomeMenu : MonoBehaviour {
 
 	[SerializeField]
 	public Text endButtonText;
+	public float startDelay;
 
-	public void startGame () {
+	private void StartGame () {
 		SceneManager.LoadScene ("GameScreen");
+	}
+
+	public void InvokeToStartGame () {
+		Invoke ("StartGame", startDelay);
 	}
 
 	public void EndGame () {
