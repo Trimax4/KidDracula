@@ -4,6 +4,7 @@ using System.Collections;
 public class Player_movement : MonoBehaviour {
 
     public float resetSpeed = 4f;
+	public Animator animator;
     private float speed;
            
 	// Use this for initialization

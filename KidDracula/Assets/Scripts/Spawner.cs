@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
         string spawnerSelected = "Spawner (" + pickSpawner + ")";
 
         int rand = Random.Range(0, 4);
-		Debug.Log (rand.ToString ());
+//		Debug.Log (rand.ToString ());
 		if (rand == 0) {
 			Instantiate (gObject, GameObject.Find (spawnerSelected).transform.position, Quaternion.identity);
 		} else if (rand == 1) {

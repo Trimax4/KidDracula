@@ -4,6 +4,7 @@ using System.Collections;
 public class PeopleScript : MonoBehaviour
 {
     private GameObject dataObject;
+	private Animator playerAnimator;
     private HealthBarController localData;
     private BloodCounter score;
 
@@ -24,6 +25,8 @@ public class PeopleScript : MonoBehaviour
         dataObject = GameObject.Find("VisualizedHealthBar");
         localData = dataObject.GetComponent<HealthBarController>();
 
+		playerAnimator = GameObject.FindGameObjectWithTag ("Player1").GetComponent<Player_movement> ().animator;
+
 		dataObject = GameObject.FindGameObjectWithTag ("ScoreText");
 		score = dataObject.GetComponent<BloodCounter> ();
     }
@@ -37,10 +40,18 @@ public class PeopleScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player1")
         {
-			Debug.Log (gameObject.tag + " eaten");
+//			Debug.Log (gameObject.tag + " eaten");
 			float bloodWorth = peopleToBlood [gameObject.tag] * 10;
 			localData.GainBloodBy(bloodWorth);
 			score.AddBlood (bloodWorth);
+
+			// animate the player
+			if (gameObject.transform.position.x < col.gameObject.transform.position.x) {
+				playerAnimator.SetTrigger ("PlayerBiteLeft");
+			} else {
+				playerAnimator.SetTrigger ("PlayerBiteRight");
+			}
+
             Destroy(gameObject);
         }
     }
