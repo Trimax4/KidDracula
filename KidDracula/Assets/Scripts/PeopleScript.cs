@@ -28,7 +28,7 @@ public class PeopleScript : MonoBehaviour
 		playerAnimator = GameObject.FindGameObjectWithTag ("Player1").GetComponent<Player_movement> ().animator;
 
 		dataObject = GameObject.FindGameObjectWithTag ("ScoreText");
-		score = dataObject.GetComponent<BloodCounter> ();
+		score = dataObject.GetComponent<BloodCounter>();
     }
 
     void Awake()
@@ -38,8 +38,22 @@ public class PeopleScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        if (gameObject.tag == "man")
+        {
+            Debug.Log("in man");
+            GameObject.Find("Main Camera").GetComponent<SoundManager>().PlaySound(2);
+        }
+        if (gameObject.tag == "child")
+        {
+            GameObject.Find("Main Camera").GetComponent<SoundManager>().PlaySound(2);
+        }
+        if (gameObject.tag == "woman")
+        {
+            GameObject.Find("Main Camera").GetComponent<SoundManager>().PlaySound(1);
+        }
         if (col.gameObject.tag == "Player1")
         {
+
 //			Debug.Log (gameObject.tag + " eaten");
 			float bloodWorth = peopleToBlood [gameObject.tag] * 10;
 			localData.GainBloodBy(bloodWorth);

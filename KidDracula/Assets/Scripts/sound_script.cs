@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class sound_script : MonoBehaviour {
-    public AudioClip bite;
-	// Use this for initialization
-	void Start () {
-	
-	}
+public class sound_script : MonoBehaviour
+{
+    public AudioClip sound;
+    private AudioSource source;
+    // Use this for initialization
+    void Start () {
+        
+    }
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -14,11 +21,10 @@ public class sound_script : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision col)
     {
-        if((col.gameObject.name=="Male"))
+        if((col.gameObject.tag =="man"))
         {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
-            audio.Play(44100);
+            Debug.Log("audio play");
+            source.Play();
         }
     }
 }

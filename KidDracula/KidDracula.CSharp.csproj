@@ -76,9 +76,11 @@
     <Compile Include="Assets\Scripts\Player_movement.cs" />
     <Compile Include="Assets\Scripts\ShareDataScript.cs" />
     <Compile Include="Assets\Scripts\SideSpawner.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\WelcomeMenu.cs" />
+    <Compile Include="Assets\Scripts\sound_script.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
