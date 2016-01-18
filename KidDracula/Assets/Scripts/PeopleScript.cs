@@ -53,9 +53,9 @@ public class PeopleScript : MonoBehaviour
         }
         if (col.gameObject.tag == "Player1")
         {
-
-//			Debug.Log (gameObject.tag + " eaten");
-			float bloodWorth = peopleToBlood [gameObject.tag] * 10;
+            GameObject.Find("Main Camera").GetComponent<SoundManager>().PlaySound(4);
+            //			Debug.Log (gameObject.tag + " eaten");
+            float bloodWorth = peopleToBlood [gameObject.tag] * 10;
 			localData.GainBloodBy(bloodWorth);
 			score.AddBlood (bloodWorth);
 
